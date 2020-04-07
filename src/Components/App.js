@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="page__header">
-          <h1>Mi lista de Pokemons</h1>
+          <h1 className="page__header--tittle">Mi lista de Pokemons</h1>
         </header>
         <main className="page__main">
           <Pokelist pokemons={this.state.data} />
