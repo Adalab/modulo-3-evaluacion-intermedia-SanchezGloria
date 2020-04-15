@@ -1,10 +1,11 @@
 import React from 'react';
 import Pokemon from './Pokemon';
+import PropTypes from 'prop-types';
 import '../Stylesheets/Pokelist.css';
 
 class Pokelist extends React.Component {
   render() {
-    console.log(this.props.pokemons);
+    // console.log(this.props.pokemons);
     return (
       <ul className="page__main--list">
         {this.props.pokemons.map((pokemon, index) => {
@@ -18,5 +19,9 @@ class Pokelist extends React.Component {
     );
   }
 }
+
+Pokelist.propTypes = {
+  pokemons: PropTypes.array,
+};
 
 export default Pokelist;

@@ -1,9 +1,10 @@
 import React from 'react';
 import '../Stylesheets/Pokemon.css';
+import PropTypes from 'prop-types';
 
 class Pokemon extends React.Component {
   render() {
-    console.log(this.props.pokemon);
+    // console.log(this.props.pokemon);
 
     return (
       <>
@@ -22,5 +23,9 @@ class Pokemon extends React.Component {
     );
   }
 }
+
+Pokemon.propTypes = {
+  pokemon: PropTypes.object,
+};
 
 export default Pokemon;
