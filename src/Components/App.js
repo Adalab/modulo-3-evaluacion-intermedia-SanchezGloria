@@ -16,7 +16,6 @@ class App extends React.Component {
 
   handleCard = (id) => {
     let clickedId = parseInt(id);
-    // console.log(clickedId);
     let prevfavorites = this.state.arrayFavs;
     let favIndex = prevfavorites.indexOf(clickedId);
     if (favIndex === -1) {
@@ -32,8 +31,6 @@ class App extends React.Component {
   };
 
   render() {
-    // console.log(this.state.data);
-    // console.log(this.state.arrayFavs);
     return (
       <div className="App">
         <header className="page__header">

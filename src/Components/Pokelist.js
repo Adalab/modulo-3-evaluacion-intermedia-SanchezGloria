@@ -9,11 +9,9 @@ class Pokelist extends React.Component {
     this.styleFav = '';
   }
   handleCardClick = (ev) => {
-    // console.log(ev.currentTarget.id);
     this.props.handleCard(ev.currentTarget.id);
   };
   render() {
-    // console.log(this.props.pokemons);
     return (
       <ul className="page__main--list">
         {this.props.pokemons.map((pokemon, index) => {
