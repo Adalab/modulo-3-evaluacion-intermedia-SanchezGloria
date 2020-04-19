@@ -8,17 +8,36 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: Data,
+      arrayFavs: [],
+      className: '',
     };
+    this.handleCard = this.handleCard.bind(this);
   }
+
+  handleCard = (id) => {
+    let clickedId = parseInt(id);
+    let prevfavorites = this.state.arrayFavs;
+    let favIndex = prevfavorites.indexOf(clickedId);
+    if (favIndex === -1) {
+      this.setState((prevState) => {
+        return {
+          arrayFavs: [...prevState.arrayFavs, clickedId],
+        };
+      });
+    } else {
+      prevfavorites.splice(favIndex, 1);
+      this.setState({ arrayFavs: [...prevfavorites] });
+    }
+  };
+
   render() {
-    console.log(this.state.data);
     return (
       <div className="App">
         <header className="page__header">
           <h1 className="page__header--tittle">Mi lista de Pokemons</h1>
         </header>
         <main className="page__main">
-          <Pokelist pokemons={this.state.data} />
+          <Pokelist pokemons={this.state.data} arrayFavs={this.state.arrayFavs} handleCard={this.handleCard} />
         </main>
       </div>
     );
